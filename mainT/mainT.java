@@ -1,3 +1,5 @@
+// Klaus 15:34
+
 package mainT;
 
 import Spielobject.spielobject;
