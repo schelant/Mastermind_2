@@ -1,3 +1,5 @@
+// 14.11. 22:46 THIS IS ONLY A TEST
+
 package mainT;
 
 import Spielobject.spielobject;
