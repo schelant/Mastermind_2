@@ -1,4 +1,4 @@
-// Klaus 15:34
+// Klaus 15:34 Simon 15:40
 
 package mainT;
 
