@@ -9,10 +9,14 @@ public class spielobject {
     {
         String [] ZielArray = new String [4];
         double zufallDouble = Math.random();
-        int zufall = (int)(zufallDouble * 6);
 
-        ZielArray[0] = ConvToColour(zufall);
-        
+        //TODO die Zufalls Zahl ist 4 mal gleich hier muss ein neuer Generator gefunden werden
+
+        for (int i = 0; i < 4; i++) {
+            int zufall = (int)(zufallDouble * 6);
+            ZielArray[i] = ConvToColour(zufall);
+        }
+
         return ZielArray;
     }
 
