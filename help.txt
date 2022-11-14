@@ -1,0 +1,4 @@
+// ANLEITUNG
+git add .
+git commit -m himymessage
+git pull https://github.com/SiDsHubG/Mastermind.git master
