@@ -18,6 +18,7 @@ public class mainT
         x.ZielArray = x.Init();
 
         System.out.print(x.ZielArray[0]);
+        System.out.print(x.ZielArray[1]);
     }
 }
 
