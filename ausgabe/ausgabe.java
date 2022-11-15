@@ -1,7 +1,7 @@
 package ausgabe;
 
 public class ausgabe {
-    public void PrintZielArray(String[] x){
+    public static void PrintZielArray(String[] x){
         int i = 0;
         
         for (i = 0; i < x.length; i++) {

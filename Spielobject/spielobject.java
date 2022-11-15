@@ -1,16 +1,16 @@
 package Spielobject;
-import java.lang.Math;
 import java.util.Random;        // Random Generator
 
 public class spielobject {
-    public String [] [] Farbenmatrix = new String [4] [10];
-    public String [] ZielArray = new String [4];
-    Random random = new Random();   // ist das automatisch private?
+    public String [] [] Farbenmatrix;
+    public String [] ZielArray;
+    Random random = new Random();   // ist das automatisch private? ja
 
     public String[] Init(int anzahlFarben, int anzahlKugeln)
     {
         String [] ZielArray = new String [anzahlFarben];
         int zufall = 0; // deklariert man variablen = 0 in java?
+        // alternativ int zufall2;
 
         for (int i = 0; i < anzahlKugeln; i++) {
             zufall = random.nextInt(anzahlFarben);

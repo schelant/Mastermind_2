@@ -4,6 +4,7 @@
 package mainT;
 
 import Spielobject.spielobject;
+import ausgabe.ausgabe;
 
 // abstract class Spieler{
 //     abstract void CreateMap();
@@ -19,15 +20,11 @@ public class mainT
         int anzahlFarben = 10;       // aus config lesen statt deklarieren
         int anzahlKugeln = 4;       // wie "breit" das spielfeld ist, name vermutlich ungünstig
 
-        System.out.println("hello");
         spielobject x = new spielobject();
         x.ZielArray = x.Init(anzahlFarben, anzahlKugeln);
 
-        // nicht objekt orientierter test!
-        System.out.println(x.ZielArray[0]);
-        System.out.println(x.ZielArray[1]);
-        System.out.println(x.ZielArray[2]);
-        System.out.println(x.ZielArray[3]);
+        ausgabe.PrintZielArray(x.ZielArray);
+    
     }
 }
 
