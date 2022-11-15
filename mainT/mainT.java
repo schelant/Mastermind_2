@@ -16,12 +16,18 @@ public class mainT
 {
     public static void main (String[] args) 
     {
+        int anzahlFarben = 10;       // aus config lesen statt deklarieren
+        int anzahlKugeln = 4;       // wie "breit" das spielfeld ist, name vermutlich ungünstig
+
         System.out.println("hello");
         spielobject x = new spielobject();
-        x.ZielArray = x.Init();
+        x.ZielArray = x.Init(anzahlFarben, anzahlKugeln);
 
-        System.out.print(x.ZielArray[0]);
-        System.out.print(x.ZielArray[1]);
+        // nicht objekt orientierter test!
+        System.out.println(x.ZielArray[0]);
+        System.out.println(x.ZielArray[1]);
+        System.out.println(x.ZielArray[2]);
+        System.out.println(x.ZielArray[3]);
     }
 }
 

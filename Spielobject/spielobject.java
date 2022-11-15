@@ -1,19 +1,19 @@
 package Spielobject;
 import java.lang.Math;
+import java.util.Random;        // Random Generator
 
 public class spielobject {
     public String [] [] Farbenmatrix = new String [4] [10];
     public String [] ZielArray = new String [4];
+    Random random = new Random();   // ist das automatisch private?
 
-    public String[] Init()
+    public String[] Init(int anzahlFarben, int anzahlKugeln)
     {
-        String [] ZielArray = new String [4];
-        double zufallDouble = Math.random();
+        String [] ZielArray = new String [anzahlFarben];
+        int zufall = 0; // deklariert man variablen = 0 in java?
 
-        //TODO die Zufalls Zahl ist 4 mal gleich hier muss ein neuer Generator gefunden werden
-
-        for (int i = 0; i < 4; i++) {
-            int zufall = (int)(zufallDouble * 6);
+        for (int i = 0; i < anzahlKugeln; i++) {
+            zufall = random.nextInt(anzahlFarben);
             ZielArray[i] = ConvToColour(zufall);
         }
 
@@ -35,6 +35,14 @@ public class spielobject {
                 return "White";
             case 5:
                 return "Yellow";
+            case 6:
+                return "Teal";
+            case 7:
+                return "Cyan";
+            case 8:
+                return "Purple";
+            case 9:
+                return "Lime";
             default:
                 return "err";
         }
