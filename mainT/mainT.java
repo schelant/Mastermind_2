@@ -5,6 +5,7 @@ package mainT;
 
 import Spielobject.spielobject;
 import ausgabe.ausgabe;
+import eingabe.eingabe;
 
 // abstract class Spieler{
 //     abstract void CreateMap();
@@ -24,6 +25,10 @@ public class mainT
         x.ZielArray = x.Init(anzahlFarben, anzahlKugeln);
 
         ausgabe.PrintZielArray(x.ZielArray);
+
+        String eingabeFarbe = eingabe.einlesen();
+
+        System.out.println("Gewählte Farbe: " + eingabeFarbe);
     
     }
 }

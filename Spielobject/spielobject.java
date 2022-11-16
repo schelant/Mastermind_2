@@ -30,7 +30,7 @@ public class spielobject {
             case 2:
                 return "Green";
             case 3:
-                return "Black";
+                return "Aqua";
             case 4:
                 return "White";
             case 5:
