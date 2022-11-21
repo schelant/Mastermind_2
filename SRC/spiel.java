@@ -9,16 +9,16 @@ public class spiel {
         Scanner einlesen = new Scanner(System.in);
 
         spielobject x = new spielobject();
+        eingabe input = new eingabe();
+
+
         x.ZielArray = x.Init(10, 4);
 
-        ausgabe.PrintZielArray(x.ZielArray);
+        ausgabe.PrintZielArray(x.GetColourFromChar(x.ZielArray));
 
-        int inputNumber = eingabe.einlesen(einlesen);
+        input.row = input.einlesen(einlesen);
 
-        String inputColour;
-        inputColour = x.ConvToColour(inputNumber);
-
-        System.out.println("Gewählte Farbe: " + inputColour);
+        ausgabe.PrintZielArray(x.GetColourFromChar(input.row));
         
         //einlesen.close();
     }

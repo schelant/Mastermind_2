@@ -13,44 +13,88 @@ public class spielobject {
     {
         this.anzahlFarben = anzahlFarben;
         this.anzahlKugeln = anzahlKugeln;
-        
-        String [] ZielArray = new String [anzahlFarben];
+
+        String [] ZielArray = new String [anzahlKugeln];
         int zufall = 0; // deklariert man variablen = 0 in java?
         // alternativ int zufall2;
 
-        for (int i = 0; i < this.anzahlKugeln; i++) {
+        for (int i = 0; i < anzahlKugeln; i++) {
             zufall = random.nextInt(anzahlFarben);
-            ZielArray[i] = ConvToColour(zufall);
+            ZielArray[i] = ConvToColour(zufall+1);
         }
 
         return ZielArray;
     }
 
-    public String ConvToColour(int x)
-    {
-        switch(x){
-            case 0:
-                return "Red";
+    public String ConvToColour(int zufall){
+        switch(zufall){
             case 1:
-                return "Blue";
+                return "r";
             case 2:
-                return "Green";
+                return "b";
             case 3:
-                return "Aqua";
+                return "g";
             case 4:
-                return "White";
+                return "a";
             case 5:
-                return "Yellow";
+                return "w";
             case 6:
-                return "Teal";
+                return "y";
             case 7:
-                return "Cyan";
+                return "t";
             case 8:
-                return "Purple";
+                return "c";
             case 9:
-                return "Lime";
+                return "p";
+            case 10:
+                return "l";
             default:
                 return "err";
         }
+    }
+
+    public String[] GetColourFromChar(String[] x){
+        int i;
+        String[] sReturn = new String[x.length];
+        String Colour;
+        for (i = 0; i<x.length; i++) {
+            switch(x[i]){
+                case "r":
+                    Colour = "Red";
+                    break;
+                case "b":
+                    Colour = "Blue";
+                    break;
+                case "g":
+                    Colour = "Green";
+                    break;
+                case "a":
+                    Colour = "Aqua";
+                    break;
+                case "w":
+                    Colour = "White";
+                    break;
+                case "y":
+                    Colour = "Yellow";
+                    break;
+                case "t":
+                    Colour = "Teal";
+                    break;
+                case "c":
+                    Colour = "Cyan";
+                    break;
+                case "p":
+                    Colour = "Purple";
+                    break;
+                case "l":
+                    Colour = "Lime";
+                    break;
+                default:
+                    Colour = "err";
+                    break;
+            }
+            sReturn[i] = Colour;
+        }
+        return sReturn;
     }
 }

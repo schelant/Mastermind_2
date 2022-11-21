@@ -3,17 +3,19 @@ package SRC;
 import java.util.Scanner;
 
 public class eingabe {
-    public static int einlesen(Scanner einlesen){
+    public String[] row;
+
+    public String[] einlesen(Scanner einlesen){
         
         System.out.println("Gib was ein Freund!");
 
         String eingabe = einlesen.nextLine();
 
-        int i;
-        i = Integer.parseInt(eingabe);
+        
+        this.row = eingabe.split(" ");
 
         //System.out.println(" Du schriebst: " + eingabe);
 
-        return i;
+        return this.row;
     }
 }
