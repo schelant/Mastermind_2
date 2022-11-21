@@ -11,6 +11,11 @@ public class ausgabe {
         System.out.print("\n");
 
     }
+    public static void PrintFeedback(int[] x){
+        System.out.println("Position und Farbe Korrekt: "+x[0]);
+        System.out.println("Position und Farbe Korrekt: "+x[1]+"\n\n");
+    }
+
     public static void printSpielregeln () {
         System.out.print("Spielregeln Mastermind \n");
         System.out.print("Ziel des Spiels: Errate die richtigen Farben und die richtige Reihenfolge der Kugeln.\n");
