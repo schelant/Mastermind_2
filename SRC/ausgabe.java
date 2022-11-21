@@ -8,7 +8,7 @@ public class ausgabe {
         for (i = 0; i < x.length; i++) {
             System.out.print(x[i]+" | ");
         }
-        System.out.print("\n");
+        System.out.print("\n\n");
 
     }
     public static void PrintFeedback(int[] x){
