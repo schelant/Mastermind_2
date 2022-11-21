@@ -19,6 +19,9 @@ public class spiel {
         rueck.PosNumberCorrect = rueck.Vergleich(x.ZielArray, input.row);
         ausgabe.PrintFeedback(rueck.PosNumberCorrect);
 
+        System.out.print(input.row[0]);
+
+        x.AddFarbenMatrix(input.row, Zeile);
         //einlesen.close();
     }
 }

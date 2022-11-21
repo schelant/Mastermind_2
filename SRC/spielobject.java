@@ -26,6 +26,14 @@ public class spielobject {
         return ZielArray;
     }
 
+    public void AddFarbenMatrix(String[] input, int runde){
+        int i;
+        System.out.print(input.length);
+        for (i = 0; i<input.length; i++) {
+            //Farbenmatrix[runde][i] = input[i]; HIER FUNKTIONIERT WAS NICHT
+        }
+    }
+
     public String ConvToColour(int zufall){
         switch(zufall){
             case 1:
