@@ -9,6 +9,7 @@ public class Logik {
         this.ColourCorrect = ColourCorrect;
         this.PositionCorrect = PositionCorrect;
     }
+    
     public int GetPosition(){
         return Position;
     }

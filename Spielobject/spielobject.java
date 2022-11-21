@@ -20,7 +20,7 @@ public class spielobject {
         return ZielArray;
     }
 
-    private String ConvToColour(int x)
+    public String ConvToColour(int x)
     {
         switch(x){
             case 0:
