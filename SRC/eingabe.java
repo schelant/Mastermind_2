@@ -7,7 +7,7 @@ public class eingabe {
 
     public String[] einlesen(Scanner einlesen){
         
-        System.out.println("Gib was ein Freund!");
+        System.out.println("Gib was ein, Freund!");
 
         String eingabe = einlesen.nextLine();
 
