@@ -4,12 +4,13 @@ import java.util.Scanner;
 
 public class spiel {
     public boolean gameIsOn;
+    public int Rundenzahl;
 
-    public void Runde(spielobject x, rueckmeldung rueck, int Zeile){
+    public void Runde(spielobject x, rueckmeldung rueck){
         Scanner einlesen = new Scanner(System.in);
         eingabe input = new eingabe();
 
-        ausgabe.printInfoZeile(Zeile);
+        ausgabe.printInfoZeile(this.Rundenzahl);
         ausgabe.PrintZielArray(x.GetColourFromChar(x.ZielArray));
         
         input.row = input.einlesen(einlesen);
@@ -21,7 +22,8 @@ public class spiel {
 
         System.out.print(input.row[0]);
 
-        x.AddFarbenMatrix(input.row, Zeile);
+        x.AddFarbenMatrix(input.row, this.Rundenzahl);
+        ausgabe.FlushTerminal();
         //einlesen.close();
     }
 }

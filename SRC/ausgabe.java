@@ -16,6 +16,21 @@ public class ausgabe {
         System.out.println("Position und Farbe Korrekt: "+x[1]+"\n\n");
     }
 
+    public static void FlushTerminal(){
+        try{
+            final String os = System.getProperty("os.name");
+            
+            if (os.contains("Windows")){
+                Runtime.getRuntime().exec("cls");
+            }
+            else{
+                Runtime.getRuntime().exec("clear");
+            }
+        }
+        catch (final Exception e){
+        }
+    }
+
     public static void printSpielregeln () {
         System.out.print("Spielregeln Mastermind \n");
         System.out.print("Ziel des Spiels: Errate die richtigen Farben und die richtige Reihenfolge der Kugeln.\n");

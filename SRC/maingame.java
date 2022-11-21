@@ -12,17 +12,9 @@ public class maingame
 
         x.ZielArray = x.Init(10, 4);
 
-        int Zeile = 1;
         while (MainGame.gameIsOn == true){
-            MainGame.Runde(x, rueck,Zeile);
-            Zeile++;
-
-            if (Zeile == 12 ){
-
-                
-            }
-
-
+            MainGame.Runde(x, rueck);
+            MainGame.Rundenzahl++;
         }
     }
 }
