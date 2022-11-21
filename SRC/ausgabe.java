@@ -41,4 +41,7 @@ public class ausgabe {
 
     }
 
+    public static void printInfoZeile (int Zeile) {
+        System.out.print("\n\n"+Zeile+": ----------------------\n");
+    }
 }

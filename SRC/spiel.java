@@ -5,10 +5,11 @@ import java.util.Scanner;
 public class spiel {
     public boolean gameIsOn;
 
-    public void Runde(spielobject x, rueckmeldung rueck){
+    public void Runde(spielobject x, rueckmeldung rueck, int Zeile){
         Scanner einlesen = new Scanner(System.in);
         eingabe input = new eingabe();
 
+        ausgabe.printInfoZeile(Zeile);
         ausgabe.PrintZielArray(x.GetColourFromChar(x.ZielArray));
         
         input.row = input.einlesen(einlesen);
