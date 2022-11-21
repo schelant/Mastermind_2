@@ -6,16 +6,20 @@ public class spielobject {
     public String [] ZielArray;
     public int anzahlFarben;       // aus config lesen statt deklarieren
     public int anzahlKugeln;       // wie "breit" das spielfeld ist, name vermutlich ungünstig
+    public int anzahlRunden;        // wie viele runden gespielt werden
     
-    Random random = new Random();   // ist das automatisch private? ja
+    Random random = new Random();
+       
 
-    public String[] Init(int anzahlFarben, int anzahlKugeln)
+    public String[] Init(int anzahlFarben, int anzahlKugeln, int anzahlRunden)
     {
         this.anzahlFarben = anzahlFarben;
         this.anzahlKugeln = anzahlKugeln;
+        this.anzahlRunden = anzahlRunden;
 
         String [] ZielArray = new String [anzahlKugeln];
-        int zufall = 0; // deklariert man variablen = 0 in java?
+        
+        int zufall = 0; 
         // alternativ int zufall2;
 
         for (int i = 0; i < anzahlKugeln; i++) {
@@ -26,12 +30,15 @@ public class spielobject {
         return ZielArray;
     }
 
-    public void AddFarbenMatrix(String[] input, int runde){
+    public String [][] AddFarbenMatrix(String[] input, int runde){              // vielleicht void und farbenmatrix übergeben oder so
+        String [][] Farbenmatrix = new String [anzahlRunden][anzahlKugeln];     // muss eventuell vermutlich außerhalb der funktion instanziiert werden
         int i;
-        System.out.print(input.length);
+    
         for (i = 0; i<input.length; i++) {
-            //Farbenmatrix[runde][i] = input[i]; HIER FUNKTIONIERT WAS NICHT
+            Farbenmatrix[runde][i] = input[i] ;
         }
+
+        return Farbenmatrix;
     }
 
     public String ConvToColour(int zufall){

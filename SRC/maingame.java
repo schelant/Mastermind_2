@@ -10,7 +10,7 @@ public class maingame
         spielobject x = new spielobject();
         rueckmeldung rueck = new rueckmeldung();
 
-        x.ZielArray = x.Init(10, 4);
+        x.ZielArray = x.Init(10, 4, 12);
 
         while (MainGame.gameIsOn == true){
             MainGame.Runde(x, rueck);
