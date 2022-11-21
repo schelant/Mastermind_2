@@ -7,8 +7,13 @@ public class maingame
         spiel MainGame = new spiel();
         MainGame.gameIsOn = true;
 
+        spielobject x = new spielobject();
+        rueckmeldung rueck = new rueckmeldung();
+
+        x.ZielArray = x.Init(10, 4);
+
         while (MainGame.gameIsOn == true){
-            MainGame.Runde();
+            MainGame.Runde(x, rueck);
         }
     }
 }

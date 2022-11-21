@@ -5,20 +5,17 @@ import java.util.Scanner;
 public class spiel {
     public boolean gameIsOn;
 
-    public void Runde(){
+    public void Runde(spielobject x, rueckmeldung rueck){
         Scanner einlesen = new Scanner(System.in);
-
-        spielobject x = new spielobject();
         eingabe input = new eingabe();
 
-
-        x.ZielArray = x.Init(10, 4);
-
         ausgabe.PrintZielArray(x.GetColourFromChar(x.ZielArray));
-
+        
         input.row = input.einlesen(einlesen);
 
         ausgabe.PrintZielArray(x.GetColourFromChar(input.row));
+
+        rueck.PosColourCorrect = rueck.Vergleich(x.ZielArray, input.row);
         
         //einlesen.close();
     }
