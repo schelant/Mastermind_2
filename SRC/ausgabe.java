@@ -22,5 +22,6 @@ public class ausgabe {
         }
     public static void printTabelleFarben () {
         System.out.print("bla");
+        // hi efef
     }
 }
