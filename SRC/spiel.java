@@ -15,8 +15,8 @@ public class spiel {
 
         ausgabe.PrintZielArray(x.GetColourFromChar(input.row));
 
-        rueck.PosColourCorrect = rueck.Vergleich(x.ZielArray, input.row);
-        
+        rueck.PosNumberCorrect = rueck.Vergleich(x.ZielArray, input.row);
+        System.out.println(rueck.PosNumberCorrect[0]+" "+rueck.PosNumberCorrect[1]);
         //einlesen.close();
     }
 }
