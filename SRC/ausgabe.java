@@ -19,9 +19,21 @@ public class ausgabe {
         System.out.print("Die erste Zahl gibt dir die Anzahl an gesetzten Kugeln mit richtiger Position und Farbe an.\n");
         System.out.print("Die zweite Zahl gibt dir die Anzahl an gesetzten Kugeln mit der richtigen Farbe, aber an falscher Position, an.\n");
         System.out.print("Viel Spaß beim Spielen! Du hast XXX Versuche.\n");
-        }
-    public static void printTabelleFarben () {
-        System.out.print("bla");
-        // hi efef
     }
+
+    public static void printTabelleFarben () {
+
+        System.out.print(" 1 r (red) \n");
+        System.out.print(" 2 b (blue) \n");
+        System.out.print(" 3 g (green) \n");
+        System.out.print(" 4 a (aqua) \n");
+        System.out.print(" 5 w (white) \n");
+        System.out.print(" 6 y (yellow) \n");
+        System.out.print(" 7 t (teal) \n");
+        System.out.print(" 8 c (cyan) \n");
+        System.out.print(" 9 p (purple) \n");
+        System.out.print("10 l (lima) \n");
+
+    }
+
 }
