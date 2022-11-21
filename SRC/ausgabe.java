@@ -1,7 +1,7 @@
 package SRC;
 
 public class ausgabe {
-    // Variable für Anzahl der versuche XXX;
+    // Variable für Anzahl der versuche X X X;
     public static void PrintZielArray(String[] x){
         int i = 0;
         
