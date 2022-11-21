@@ -1,18 +1,24 @@
-package Spielobject;
+package SRC;
 import java.util.Random;        // Random Generator
 
 public class spielobject {
     public String [] [] Farbenmatrix;
     public String [] ZielArray;
+    public int anzahlFarben;       // aus config lesen statt deklarieren
+    public int anzahlKugeln;       // wie "breit" das spielfeld ist, name vermutlich ungünstig
+    
     Random random = new Random();   // ist das automatisch private? ja
 
     public String[] Init(int anzahlFarben, int anzahlKugeln)
     {
+        this.anzahlFarben = anzahlFarben;
+        this.anzahlKugeln = anzahlKugeln;
+        
         String [] ZielArray = new String [anzahlFarben];
         int zufall = 0; // deklariert man variablen = 0 in java?
         // alternativ int zufall2;
 
-        for (int i = 0; i < anzahlKugeln; i++) {
+        for (int i = 0; i < this.anzahlKugeln; i++) {
             zufall = random.nextInt(anzahlFarben);
             ZielArray[i] = ConvToColour(zufall);
         }

@@ -1,6 +1,6 @@
-package Logik;
+package SRC;
 
-public class Logik {
+public class logik {
     private int Position;
     private String ColourCorrect,PositionCorrect;
 

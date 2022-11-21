@@ -1,4 +1,4 @@
-package ausgabe;
+package SRC;
 
 public class ausgabe {
     public static void PrintZielArray(String[] x){

@@ -1,4 +1,4 @@
-package eingabe;
+package SRC;
 
 import java.util.Scanner;
 
