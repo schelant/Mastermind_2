@@ -3,4 +3,14 @@ git add .
 git commit -m himymessage
 git pull https://github.com/SiDsHubG/Mastermind.git master
 
+//Änderungen pushen: Erstmal pullen (s.o.), sodass man den neuesten Stand hat.
+//Dann auf Source Control (drei Kreise links in Visual Studio),
+//"commit" und eine Bemerkung schreiben, was geändert wurde
+//"publish branch"
+//dann im Terminal: git push https://github.com/SiDsHubG/Mastermind.git master
+//ggf. ist es notwendig, nochmal folgendes im Terminal einzugeben:
+//git config --global user.email "you@example.com"
+//git config --global user.name "Your Name"
+
+
 java swing
