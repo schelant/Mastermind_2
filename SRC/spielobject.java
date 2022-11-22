@@ -81,7 +81,7 @@ public class spielobject {
                     Colour = "Green";
                     break;
                 case "a":
-                    Colour = "Aqua";
+                    Colour = "Aqua";        // das q wird irgendwie nicht angezeigt
                     break;
                 case "w":
                     Colour = "White";

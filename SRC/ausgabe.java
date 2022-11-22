@@ -11,9 +11,30 @@ public class ausgabe {
         System.out.print("\n\n");
 
     }
+
+    public static void PrintSpielanzeige(spielobject x, rueckmeldung rueck){
+        System.out.println("Ich bin die FarbenMatrix");
+        
+        for (int i=0; i<x.anzahlRunden; i++){
+            for (int j=0; j<x.anzahlKugeln; j++){
+                System.out.print(x.Farbenmatrix[i][j] + " ");
+            }
+            PrintFeedback(rueck.PosNumberCorrect);
+        }
+    }
+
+
     public static void PrintFeedback(int[] x){
-        System.out.println("Position und Farbe Korrekt: "+x[0]);
-        System.out.println("Position und Farbe Korrekt: "+x[1]+"\n\n");
+        int i;
+        for (i=0; i<x[0]; i++){             // X für "Position und Farbe korrekt"; O für "Farbe korrekt"; in Anleitung schreiben oder so
+            System.out.print("X");
+        }
+        for (i=0; i<x[1]; i++){
+            System.out.print("O");
+        }
+        System.out.println();
+        // System.out.println("Position und Farbe Korrekt: "+x[0]);
+        // System.out.println("Position und Farbe Korrekt: "+x[1]+"\n\n");
     }
 
     public static void FlushTerminal(){

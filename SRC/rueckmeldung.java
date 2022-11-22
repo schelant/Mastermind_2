@@ -3,10 +3,21 @@ package SRC;
 public class rueckmeldung {
     public int[] PosColourCorrect;
     public int[] PosNumberCorrect;
+
+    public void Init(){
+        int []PosNumberCorrect = new int[2];
+
+        // hier herrscht ein riesen chaos, ich wusste es nicht besser
+        // außerdem muss PosNumberCorrect zwei dimensional, die erste dimension ist dann die runde, sonst wird geht keine individuelle anzeige pro runde
+        PosNumberCorrect[0] = 0;
+        PosNumberCorrect[1] = 0;
+        this.PosNumberCorrect = PosNumberCorrect;
+    }
+
     public int[] Vergleich(String[] ZielArray, String[] EingabeArray){
         int i, j;
         int []PosColourCorrect = new int[ZielArray.length];
-        int []PosNumberCorrect = new int[2];
+        //int []PosNumberCorrect = new int[2];
         for (i = 0; i<EingabeArray.length; i++){
             if (ZielArray[i].equalsIgnoreCase(EingabeArray[i])){
                 // pos und farbe richtig = 1

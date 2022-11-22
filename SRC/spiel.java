@@ -6,11 +6,13 @@ public class spiel {
     public boolean gameIsOn;
     public int Rundenzahl;
 
-    public void Runde(spielobject x, rueckmeldung rueck){
+    public void Runde(spielobject x, rueckmeldung rueck){       
         Scanner einlesen = new Scanner(System.in);
         eingabe input = new eingabe();
 
+        
         ausgabe.printInfoZeile(this.Rundenzahl);
+        ausgabe.PrintSpielanzeige(x, rueck);
         ausgabe.PrintZielArray(x.GetColourFromChar(x.ZielArray));
         
         input.row = input.einlesen(einlesen);
@@ -22,8 +24,12 @@ public class spiel {
 
         //System.out.print(input.row[0]);
 
-        x.AddFarbenMatrix(input.row, this.Rundenzahl);     // macht noch keinen sinn, überschreibt sich selbst mit jedem aufruf
+        x.AddFarbenMatrix(input.row, this.Rundenzahl);     
         ausgabe.FlushTerminal();
+
+        if (rueck.PosNumberCorrect[0] == x.anzahlKugeln){    
+            System.out.print("Du hast gewonnen. Bitte Spielende einprogrammieren.");
+        }
         //einlesen.close();
     }
 }
