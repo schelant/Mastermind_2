@@ -16,6 +16,7 @@ public class spielobject {
         this.anzahlFarben = anzahlFarben;
         this.anzahlKugeln = anzahlKugeln;
         this.anzahlRunden = anzahlRunden;
+        this.Farbenmatrix = new String [anzahlRunden][anzahlKugeln]; 
 
         String [] ZielArray = new String [anzahlKugeln];
         
@@ -30,15 +31,11 @@ public class spielobject {
         return ZielArray;
     }
 
-    public String [][] AddFarbenMatrix(String[] input, int runde){              // vielleicht void und farbenmatrix übergeben oder so
-        String [][] Farbenmatrix = new String [anzahlRunden][anzahlKugeln];     // muss eventuell vermutlich außerhalb der funktion instanziiert werden
+    public void AddFarbenMatrix(String[] input, int runde){
         int i;
-    
         for (i = 0; i<input.length; i++) {
-            Farbenmatrix[runde][i] = input[i] ;
+            this.Farbenmatrix[runde][i] = input[i] ;
         }
-
-        return Farbenmatrix;
     }
 
     public String ConvToColour(int zufall){

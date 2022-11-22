@@ -22,7 +22,7 @@ public class spiel {
 
         //System.out.print(input.row[0]);
 
-        x.Farbenmatrix = x.AddFarbenMatrix(input.row, this.Rundenzahl);     // macht noch keinen sinn, überschreibt sich selbst mit jedem aufruf
+        x.AddFarbenMatrix(input.row, this.Rundenzahl);     // macht noch keinen sinn, überschreibt sich selbst mit jedem aufruf
         ausgabe.FlushTerminal();
         //einlesen.close();
     }
