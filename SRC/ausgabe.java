@@ -19,22 +19,22 @@ public class ausgabe {
             for (int j=0; j<x.anzahlKugeln; j++){
                 System.out.print(x.Farbenmatrix[i][j] + " ");
             }
-            PrintFeedback(rueck.PosNumberCorrect);
+            System.out.print("    ");
+            PrintFeedback(rueck.PosNumberCorrect, i);
         }
     }
 
 
-    public static void PrintFeedback(int[] x){
+    public static void PrintFeedback(int[][] PosNumberCorrect, int Runde){
+        // System.out.println("Runde: " + Rundenanzahl + "Feedback:  " + PosNumberCorrect[0][0] + " " + PosNumberCorrect[0][1]);        // debug
         int i;
-        for (i=0; i<x[0]; i++){             // X für "Position und Farbe korrekt"; O für "Farbe korrekt"; in Anleitung schreiben oder so
+        for (i=0; i<PosNumberCorrect[Runde][0]; i++){             // X für "Position und Farbe korrekt"; O für "Farbe korrekt"; in Anleitung schreiben oder so
             System.out.print("X");
         }
-        for (i=0; i<x[1]; i++){
+        for (i=0; i<PosNumberCorrect[Runde][1]; i++){
             System.out.print("O");
         }
         System.out.println();
-        // System.out.println("Position und Farbe Korrekt: "+x[0]);
-        // System.out.println("Position und Farbe Korrekt: "+x[1]+"\n\n");
     }
 
     public static void FlushTerminal(){

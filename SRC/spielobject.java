@@ -28,6 +28,12 @@ public class spielobject {
             ZielArray[i] = ConvToColour(zufall+1);
         }
 
+        for (int i=0; i<anzahlRunden; i++){
+            for (int j=0; j<anzahlKugeln; j++){
+                this.Farbenmatrix[i][j] = "-";
+            }
+            
+        }
         return ZielArray;
     }
 

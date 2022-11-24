@@ -11,7 +11,7 @@ public class maingame
         rueckmeldung rueck = new rueckmeldung();
 
         x.ZielArray = x.Init(10, 4, 12);
-        rueck.Init();
+        rueck.Init(x);
 
         while (MainGame.gameIsOn == true){
             MainGame.Runde(x, rueck);
