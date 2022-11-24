@@ -8,7 +8,6 @@ public class rueckmeldung {
         int [][]PosNumberCorrect = new int[x.anzahlRunden][2];
         this.PosNumberCorrect = PosNumberCorrect;
         // hier herrscht ein riesen chaos, ich wusste es nicht besser
-        // außerdem muss PosNumberCorrect zwei dimensional, die erste dimension ist dann die runde, sonst wird geht keine individuelle anzeige pro runde
         for (int i=0; i<x.anzahlRunden; i++){   // initialisierung?!
             this.PosNumberCorrect[i][0] = 0;
             this.PosNumberCorrect[i][1] = 0;

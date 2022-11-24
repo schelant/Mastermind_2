@@ -19,14 +19,9 @@ public class spiel {
 
         ausgabe.PrintZielArray(x.GetColourFromChar(input.row));
 
-        
-        // System.out.println("DEBUG1 PosNumberCorrect: " + rueck.PosNumberCorrect[0][0]);
 
         rueck.PosNumberCorrect = rueck.Vergleich(x.ZielArray, input.row, this.Rundenzahl);
-        // System.out.println("DEBUG2 PosNumberCorrect: " + rueck.PosNumberCorrect[0][0]);
         ausgabe.PrintFeedback(rueck.PosNumberCorrect, this.Rundenzahl);
-
-        //System.out.print(input.row[0]);
 
         x.AddFarbenMatrix(input.row, this.Rundenzahl);     
         ausgabe.FlushTerminal();

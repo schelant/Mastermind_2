@@ -26,7 +26,6 @@ public class ausgabe {
 
 
     public static void PrintFeedback(int[][] PosNumberCorrect, int Runde){
-        // System.out.println("Runde: " + Rundenanzahl + "Feedback:  " + PosNumberCorrect[0][0] + " " + PosNumberCorrect[0][1]);        // debug
         int i;
         for (i=0; i<PosNumberCorrect[Runde][0]; i++){             // X für "Position und Farbe korrekt"; O für "Farbe korrekt"; in Anleitung schreiben oder so
             System.out.print("X");
