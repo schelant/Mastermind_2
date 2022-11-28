@@ -4,6 +4,7 @@ public class Mastermind
 {
     public static void main (String[] args) 
     {
+        new Gui();
         SpielAktion MainGame = new SpielAktion();
         MainGame.spielGehtWeiter = true;
 

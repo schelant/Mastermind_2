@@ -8,23 +8,23 @@ public class SpielAktion {
 
     public void Runde(SpielObjekt x, Auswertung rueck){       
         Scanner einlesen = new Scanner(System.in);
-        Eingabe input = new Eingabe();
+        SpielEingabe input = new SpielEingabe();
 
         
-        Ausgabe.ausgebenTrenner(this.anzahlRunden);
-        Ausgabe.ausgebenSpielfeld(x, rueck);
-        Ausgabe.ausgebenLösung(x.konvertiereBuchstabeZuFarbe(x.zielArray));
+        SpielAusgabe.ausgebenTrenner(this.anzahlRunden);
+        SpielAusgabe.ausgebenSpielfeld(x, rueck);
+        SpielAusgabe.ausgebenLösung(x.konvertiereBuchstabeZuFarbe(x.zielArray));
         
         input.eingabeReihe = input.einlesen(einlesen);
 
-        Ausgabe.ausgebenLösung(x.konvertiereBuchstabeZuFarbe(input.eingabeReihe));
+        SpielAusgabe.ausgebenLösung(x.konvertiereBuchstabeZuFarbe(input.eingabeReihe));
 
 
         rueck.positionUndFarbeRichtig = rueck.vergleichenEingabeZiel(x.zielArray, input.eingabeReihe, this.anzahlRunden);
-        Ausgabe.ausgebenRückmeldung(rueck.positionUndFarbeRichtig, this.anzahlRunden);
+        SpielAusgabe.ausgebenRückmeldung(rueck.positionUndFarbeRichtig, this.anzahlRunden);
 
         x.hinzufügenEingabeZuMatrix(input.eingabeReihe, this.anzahlRunden);     
-        Ausgabe.reinigeEingabeaufforderung();
+        SpielAusgabe.reinigeEingabeaufforderung();
 
         if (rueck.positionUndFarbeRichtig[this.anzahlRunden][0] == x.anzahlKugeln){    
             this.spielGehtWeiter = false;
