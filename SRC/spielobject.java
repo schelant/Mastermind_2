@@ -28,6 +28,12 @@ public class spielobject {
             ZielArray[i] = ConvToColour(zufall+1);
         }
 
+        for (int i=0; i<anzahlRunden; i++){
+            for (int j=0; j<anzahlKugeln; j++){
+                this.Farbenmatrix[i][j] = "-";
+            }
+            
+        }
         return ZielArray;
     }
 
@@ -81,7 +87,7 @@ public class spielobject {
                     Colour = "Green";
                     break;
                 case "a":
-                    Colour = "Aqua";
+                    Colour = "Aqua";        // das q wird irgendwie nicht angezeigt
                     break;
                 case "w":
                     Colour = "White";
