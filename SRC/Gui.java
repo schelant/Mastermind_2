@@ -4,13 +4,10 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Point;
+import javax.swing.*;
 
 public class Gui {
-
-    private static int count = 1;
     private static JFrame lastFrame = null;
 
     public Gui() {
@@ -18,33 +15,46 @@ public class Gui {
     }
 
     private void showFrame() {
-        JFrame frame = new JFrame("Beeper " + count++);
+        int i,j;
+        JFrame frame = new JFrame("Mastermind ");
+        JTextField textField = new JTextField();
+
+        
+        for (i = 0; i<5; i++){
+            for (j = 0; j<2; j++){
+                JButton button = new JButton("Red");
+                button.setBounds(20+(i*100), 20+(j*60), 95, 30);
+                frame.add(button);
+            }
+        }
+
+        textField.setBounds(50,200,450,100);
+        textField.setText("Eingabe");
+        frame.add(textField);
+
+        // textField.setBounds(50,350,450,100);
+        // textField.setText("Ausgabe");
+        // frame.add(textField);
+
+        frame.add(new JLabel("Mastermind"));
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        frame.setLayout(new FlowLayout());
-        frame.add(new JLabel("Hello World"));
-        frame.add(new BeepingButton("Click Me"));
+
+
+        
 
         frame.pack();
         if (lastFrame == null) {
             frame.setLocationByPlatform(true);
         } else {
             Point p = lastFrame.getLocation();
-            p.translate(50, 50);
+            p.translate(100, 100);
             frame.setLocation(p);
         }
         lastFrame = frame;
-        frame.setVisible(true);
-    }
 
-    private static class BeepingButton extends JButton {
-        BeepingButton(final String text) {
-            super(text);
-            setPreferredSize(new Dimension(140, 60));
-            // addActionListener((e) -> {
-            //     Tone.sound(2000, 150);
-            //     new Gui();
-            // });
-        }
+        frame.setSize(600,500);
+        frame.setLayout(null);
+        frame.setVisible(true);
     }
 }
