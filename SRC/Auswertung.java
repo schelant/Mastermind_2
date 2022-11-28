@@ -13,37 +13,41 @@ public class Auswertung {
         }
     }
 
-    // es gibt unter bestimmten bedingungen noch falsche bewertungen der Eingabe!! (bsp Zielarray A T T A, Eingabe A A T T, ergebnis vier mal falsche position, richtige farbe)
-    // immer wenn eine farbe mehrfach auftaucht läuft was schief glaub ich
-    // aber hatte auch fälle mikt vier verschiedenen farben wo er mehr richtige farben (falsche position) angibt, als richtig wäre
     public int[][] vergleichenEingabeZiel(String[] ZielArray, String[] EingabeArray, int Rundenzahl){
         int i, j;
-        int []PosColourCorrect = new int[ZielArray.length];
+        int []allesRichtig = new int[ZielArray.length];
+        int []farbeRichtig = new int[ZielArray.length];
+        int []untersucht = new int[ZielArray.length];
         //int []PosNumberCorrect = new int[2];
         
         for (i = 0; i<EingabeArray.length; i++){
             if (ZielArray[i].equalsIgnoreCase(EingabeArray[i])){
                 // pos und farbe richtig = 1
-                PosColourCorrect[i] = 1;
+                allesRichtig[i] = 1;
+                untersucht[i] = 1;
             }
         }
 
         for (i = 0; i<EingabeArray.length; i++){
             for (j = 0; j<ZielArray.length; j++){
                 //System.out.println(ZielArray[j]+" : "+EingabeArray[i]);
-                if (ZielArray[j].equalsIgnoreCase(EingabeArray[i]) && (PosColourCorrect[j] != 1) && (PosColourCorrect[j] != 2)){
-                    PosColourCorrect[i] = 2;
-                    // farbe richtig = 2
-                    break;
+                if(untersucht[j] == 0){
+                    if (ZielArray[j].equalsIgnoreCase(EingabeArray[i])){
+                        farbeRichtig[i] = 1;
+                        untersucht[j] = 1;
+                        // farbe richtig = 2
+                        break;
+                    }
                 }
+                
             }
         }
 
-        for (i = 0;i<PosColourCorrect.length;i++){
-            if (PosColourCorrect[i] == 1){
+        for (i = 0;i<ZielArray.length;i++){
+            if (allesRichtig[i] == 1){
                 this.positionUndFarbeRichtig[Rundenzahl][0]++;
             }
-            else if (PosColourCorrect[i] == 2){
+            else if (farbeRichtig[i] == 1){
                 this.positionUndFarbeRichtig[Rundenzahl][1]++;
             }
         }
