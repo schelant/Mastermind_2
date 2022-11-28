@@ -1,6 +1,6 @@
 package SRC;
 
-public class Ausgabe {
+public class SpielAusgabe {
     // Variable für Anzahl der versuche X X X;
     public static void ausgebenLösung(String[] x){
         int i = 0;

@@ -2,7 +2,7 @@ package SRC;
 
 import java.util.Scanner;
 
-public class Eingabe {
+public class SpielEingabe {
     public String[] eingabeReihe;
 
     public String[] einlesen(Scanner einlesen){
