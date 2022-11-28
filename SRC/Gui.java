@@ -4,6 +4,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
+
+import java.awt.Color;
 import java.awt.Point;
 import javax.swing.*;
 
@@ -17,24 +19,61 @@ public class Gui {
     private void showFrame() {
         int i,j;
         JFrame frame = new JFrame("Mastermind ");
-        JTextField textField = new JTextField();
-
         
         for (i = 0; i<5; i++){
             for (j = 0; j<2; j++){
                 JButton button = new JButton("Red");
-                button.setBounds(20+(i*100), 20+(j*60), 95, 30);
+                button.setBounds(20+(i*100), 20+(j*60), 95, 45);
+                
+                switch (i+(j*5)) {
+                    case 1:
+                        button.setBackground(Color.RED);
+                        break;
+                    case 2:
+                        button.setBackground(Color.BLUE);
+                        break;
+                    case 3:
+                        button.setBackground(Color.CYAN);
+                        break;
+                    case 4:
+                        button.setBackground(Color.GRAY);
+                        break;
+                    case 5:
+                        button.setBackground(Color.GREEN);
+                        break;
+                    case 6:
+                        button.setBackground(Color.MAGENTA);
+                        break;
+                    case 7:
+                        button.setBackground(Color.ORANGE);
+                        break;
+                    case 8:
+                        button.setBackground(Color.YELLOW);
+                        break;
+                    case 9:
+                        button.setBackground(Color.WHITE);
+                        break;
+                    case 0:
+                        button.setBackground(Color.LIGHT_GRAY);
+                        break;
+                }
                 frame.add(button);
             }
         }
 
-        textField.setBounds(50,200,450,100);
-        textField.setText("Eingabe");
-        frame.add(textField);
+        JButton button = new JButton("kugel");
+        button.setBounds(20+(300), 20, 95, 45);
+        frame.add(button);
 
-        // textField.setBounds(50,350,450,100);
-        // textField.setText("Ausgabe");
-        // frame.add(textField);
+        JTextField textFieldEingabe = new JTextField();
+        textFieldEingabe.setBounds(50,150,450,100);
+        textFieldEingabe.setText("Eingabe");
+        frame.add(textFieldEingabe);
+
+        JTextField textFieldAugabe = new JTextField();
+        textFieldAugabe.setBounds(50,300,450,100);
+        textFieldAugabe.setText("Ausgabe");
+        frame.add(textFieldAugabe);
 
         frame.add(new JLabel("Mastermind"));
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -53,8 +92,9 @@ public class Gui {
         }
         lastFrame = frame;
 
-        frame.setSize(600,500);
+        frame.setSize(550,450);
         frame.setLayout(null);
         frame.setVisible(true);
     }
+    
 }
