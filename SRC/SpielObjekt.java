@@ -11,7 +11,7 @@ public class SpielObjekt {
     Random random = new Random();
        
 
-    public String[] Init(int anzahlFarben, int anzahlKugeln, int anzahlRunden)
+    public String[] initMastermind(int anzahlFarben, int anzahlKugeln, int anzahlRunden)
     {
         this.anzahlFarben = anzahlFarben;
         this.anzahlKugeln = anzahlKugeln;
@@ -25,7 +25,7 @@ public class SpielObjekt {
 
         for (int i = 0; i < anzahlKugeln; i++) {
             zufall = random.nextInt(anzahlFarben);
-            ZielArray[i] = ConvToColour(zufall+1);
+            ZielArray[i] = konvertiereZahlZuFarbe(zufall+1);
         }
 
         for (int i=0; i<anzahlRunden; i++){
@@ -37,14 +37,14 @@ public class SpielObjekt {
         return ZielArray;
     }
 
-    public void AddFarbenMatrix(String[] input, int runde){
+    public void hinzufügenEingabeZuMatrix(String[] input, int runde){
         int i;
         for (i = 0; i<input.length; i++) {
             this.farbenmatrix[runde][i] = input[i] ;
         }
     }
 
-    public String ConvToColour(int zufall){
+    public String konvertiereZahlZuFarbe(int zufall){
         switch(zufall){
             case 1:
                 return "r";
@@ -71,7 +71,7 @@ public class SpielObjekt {
         }
     }
 
-    public String[] GetColourFromChar(String[] x){
+    public String[] konvertiereBuchstabeZuFarbe(String[] x){
         int i;
         String[] sReturn = new String[x.length];
         String Colour;

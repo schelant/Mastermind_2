@@ -25,11 +25,13 @@ public class Ausgabe {
 
     public static void ausgebenRückmeldung(int[][] PosNumberCorrect, int Runde){
         int i;
+        System.out.print("\tTreffer: ");
         for (i=0; i<PosNumberCorrect[Runde][0]; i++){             // X für "Position und Farbe korrekt"; O für "Farbe korrekt"; in Anleitung schreiben oder so
             System.out.print("X");
         }
+        System.out.print("\tFarbe richtig: ");
         for (i=0; i<PosNumberCorrect[Runde][1]; i++){
-            System.out.print("O");
+            System.out.print("X");
         }
         System.out.println();
     }

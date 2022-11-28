@@ -10,7 +10,7 @@ public class Mastermind
         SpielObjekt x = new SpielObjekt();
         Auswertung rueck = new Auswertung();
 
-        x.zielArray = x.Init(10, 4, 12);
+        x.zielArray = x.initMastermind(10, 4, 12);
         rueck.initPositionsmatrix(x);
 
         while (MainGame.spielGehtWeiter == true){

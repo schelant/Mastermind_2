@@ -13,21 +13,21 @@ public class SpielAktion {
         
         Ausgabe.ausgebenTrenner(this.anzahlRunden);
         Ausgabe.ausgebenSpielfeld(x, rueck);
-        Ausgabe.ausgebenLösung(x.GetColourFromChar(x.zielArray));
+        Ausgabe.ausgebenLösung(x.konvertiereBuchstabeZuFarbe(x.zielArray));
         
         input.eingabeReihe = input.einlesen(einlesen);
 
-        Ausgabe.ausgebenLösung(x.GetColourFromChar(input.eingabeReihe));
+        Ausgabe.ausgebenLösung(x.konvertiereBuchstabeZuFarbe(input.eingabeReihe));
 
 
         rueck.positionUndFarbeRichtig = rueck.vergleichenEingabeZiel(x.zielArray, input.eingabeReihe, this.anzahlRunden);
         Ausgabe.ausgebenRückmeldung(rueck.positionUndFarbeRichtig, this.anzahlRunden);
 
-        x.AddFarbenMatrix(input.eingabeReihe, this.anzahlRunden);     
+        x.hinzufügenEingabeZuMatrix(input.eingabeReihe, this.anzahlRunden);     
         Ausgabe.reinigeEingabeaufforderung();
 
         if (rueck.positionUndFarbeRichtig[this.anzahlRunden][0] == x.anzahlKugeln){    
-            System.out.print("Du hast gewonnen. Bitte Spielende einprogrammieren.");
+            this.spielGehtWeiter = false;
         }
         //einlesen.close();
     }

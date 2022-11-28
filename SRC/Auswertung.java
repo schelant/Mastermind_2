@@ -31,7 +31,7 @@ public class Auswertung {
         for (i = 0; i<EingabeArray.length; i++){
             for (j = 0; j<ZielArray.length; j++){
                 //System.out.println(ZielArray[j]+" : "+EingabeArray[i]);
-                if (ZielArray[j].equalsIgnoreCase(EingabeArray[i]) && (PosColourCorrect[j] != 1)){
+                if (ZielArray[j].equalsIgnoreCase(EingabeArray[i]) && (PosColourCorrect[i] != 1)){
                     PosColourCorrect[i] = 2;
                     // farbe richtig = 2
                     break;
