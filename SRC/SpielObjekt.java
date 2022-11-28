@@ -1,9 +1,9 @@
 package SRC;
 import java.util.Random;        // Random Generator
 
-public class spielobject {
-    public String [] [] Farbenmatrix;
-    public String [] ZielArray;
+public class SpielObjekt {
+    public String [] [] farbenmatrix;
+    public String [] zielArray;
     public int anzahlFarben;       // aus config lesen statt deklarieren
     public int anzahlKugeln;       // wie "breit" das spielfeld ist, name vermutlich ungünstig
     public int anzahlRunden;        // wie viele runden gespielt werden
@@ -16,7 +16,7 @@ public class spielobject {
         this.anzahlFarben = anzahlFarben;
         this.anzahlKugeln = anzahlKugeln;
         this.anzahlRunden = anzahlRunden;
-        this.Farbenmatrix = new String [anzahlRunden][anzahlKugeln]; 
+        this.farbenmatrix = new String [anzahlRunden][anzahlKugeln]; 
 
         String [] ZielArray = new String [anzahlKugeln];
         
@@ -30,7 +30,7 @@ public class spielobject {
 
         for (int i=0; i<anzahlRunden; i++){
             for (int j=0; j<anzahlKugeln; j++){
-                this.Farbenmatrix[i][j] = "-";
+                this.farbenmatrix[i][j] = "-";
             }
             
         }
@@ -40,7 +40,7 @@ public class spielobject {
     public void AddFarbenMatrix(String[] input, int runde){
         int i;
         for (i = 0; i<input.length; i++) {
-            this.Farbenmatrix[runde][i] = input[i] ;
+            this.farbenmatrix[runde][i] = input[i] ;
         }
     }
 

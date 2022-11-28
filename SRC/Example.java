@@ -1,6 +1,6 @@
 package SRC;
 
-public class logik {
+public class Example {
     private int Position;
     private String ColourCorrect,PositionCorrect;
 

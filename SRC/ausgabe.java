@@ -1,31 +1,29 @@
 package SRC;
 
-public class ausgabe {
+public class Ausgabe {
     // Variable für Anzahl der versuche X X X;
-    public static void PrintZielArray(String[] x){
+    public static void ausgebenLösung(String[] x){
         int i = 0;
-        
         for (i = 0; i < x.length; i++) {
             System.out.print(x[i]+" | ");
         }
         System.out.print("\n\n");
-
     }
 
-    public static void PrintSpielanzeige(spielobject x, rueckmeldung rueck){
+    public static void ausgebenSpielfeld(SpielObjekt x, Auswertung rueck){
         System.out.println("Ich bin die FarbenMatrix");
         
         for (int i=0; i<x.anzahlRunden; i++){
             for (int j=0; j<x.anzahlKugeln; j++){
-                System.out.print(x.Farbenmatrix[i][j] + " ");
+                System.out.print(x.farbenmatrix[i][j] + " ");
             }
             System.out.print("    ");
-            PrintFeedback(rueck.PosNumberCorrect, i);
+            ausgebenRückmeldung(rueck.positionUndFarbeRichtig, i);
         }
     }
 
 
-    public static void PrintFeedback(int[][] PosNumberCorrect, int Runde){
+    public static void ausgebenRückmeldung(int[][] PosNumberCorrect, int Runde){
         int i;
         for (i=0; i<PosNumberCorrect[Runde][0]; i++){             // X für "Position und Farbe korrekt"; O für "Farbe korrekt"; in Anleitung schreiben oder so
             System.out.print("X");
@@ -36,7 +34,7 @@ public class ausgabe {
         System.out.println();
     }
 
-    public static void FlushTerminal(){
+    public static void reinigeEingabeaufforderung(){
         try{
             final String os = System.getProperty("os.name");
             
@@ -51,7 +49,7 @@ public class ausgabe {
         }
     }
 
-    public static void printSpielregeln () {
+    public static void ausgebenSpielregeln () {
         System.out.print("Spielregeln Mastermind \n");
         System.out.print("Ziel des Spiels: Errate die richtigen Farben und die richtige Reihenfolge der Kugeln.\n");
         System.out.print("Wähle die Anzahl der Farben und die Anzahl der Kugeln, die du setzen möchtest. \n");
@@ -61,7 +59,7 @@ public class ausgabe {
         System.out.print("Viel Spaß beim Spielen! Du hast XXX Versuche.\n");
     }
 
-    public static void printTabelleFarben () {
+    public static void ausgebenFarben () {
 
         System.out.print(" 1 r (red) \n");
         System.out.print(" 2 b (blue) \n");
@@ -76,7 +74,7 @@ public class ausgabe {
 
     }
 
-    public static void printInfoZeile (int Zeile) {
+    public static void ausgebenTrenner (int Zeile) {
         System.out.print("\n\n"+Zeile+": ----------------------\n");
     }
 }

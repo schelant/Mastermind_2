@@ -2,20 +2,20 @@ package SRC;
 
 import java.util.Scanner;
 
-public class eingabe {
-    public String[] row;
+public class Eingabe {
+    public String[] eingabeReihe;
 
     public String[] einlesen(Scanner einlesen){
         
         System.out.println("Gib was ein, Freund!");
 
-        String eingabe = einlesen.nextLine();
+        String s = einlesen.nextLine();
 
         
-        this.row = eingabe.split(" ");
+        this.eingabeReihe = s.split(" ");
 
         //System.out.println(" Du schriebst: " + eingabe);
 
-        return this.row;
+        return this.eingabeReihe;
     }
 }
