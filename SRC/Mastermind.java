@@ -14,12 +14,15 @@ public class Mastermind
 
         x.zielArray = x.initMastermind(10, 4, 12);
         rueck.initPositionsmatrix(x);
-
+        
+        SpielAusgabe.ausgebenSpielregeln(); //einmal am Anfang zeigen
+        System.out.print("Wähle aus den folgenden Farben:\n");
+        SpielAusgabe.ausgebenFarben();//einmal am Anfang zeigen
         
 
         while (MainGame.spielGehtWeiter == true){
             MainGame.Runde(x, rueck);
-            MainGame.anzahlRunden++;
+            MainGame.aktuelleRunde++;
         }
     }
 }

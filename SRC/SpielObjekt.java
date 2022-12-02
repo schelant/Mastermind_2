@@ -18,14 +18,14 @@ public class SpielObjekt {
         this.anzahlRunden = anzahlRunden;
         this.farbenmatrix = new String [anzahlRunden][anzahlKugeln]; 
 
-        String [] ZielArray = new String [anzahlKugeln];
+        String [] zielArray = new String [anzahlKugeln];
         
         int zufall = 0; 
         // alternativ int zufall2;
 
         for (int i = 0; i < anzahlKugeln; i++) {
             zufall = random.nextInt(anzahlFarben);
-            ZielArray[i] = konvertiereZahlZuFarbe(zufall+1);
+            zielArray[i] = konvertiereZahlZuFarbe(zufall+1);
         }
 
         for (int i=0; i<anzahlRunden; i++){
@@ -34,7 +34,7 @@ public class SpielObjekt {
             }
             
         }
-        return ZielArray;
+        return zielArray;
     }
 
     public void hinzufügenEingabeZuMatrix(String[] input, int runde){
