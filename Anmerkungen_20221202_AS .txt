@@ -1,0 +1,36 @@
+Hallo zusammen,
+
+ich habe die Attributnamen und Variablennamen nochmal alle überprüft und klein geschrieben
+und die Spielregeln und Farbtabelle eingebunden. Beim Pushen hat es wieder nicht richtig
+funktioniert, sodass ich jetzt wieder einen neuen Master Branch gemacht habe. Seht ihr den
+und die Änderungen? 
+
+Ich hab mir mal die Klassen und deren Verbindungen angesehen (vgl. UML_20221202.jpg).
+Die gestrichelten Pfeile sind unidirektionale Assoziationen, 
+die Linien ohne Pfeile sind bidirektionale Assoziationen. 
+Das heißt, bei den unidirektionalen Assoziationen nutzt eine Klasse Attribute oder
+Methoden der anderen, aber nicht umgekehrt.
+Wie man sieht ist das ein ganz schönes Chaos ;-)
+Meine Anmerkungen:
+
+1. Die Klasse SpielObjekt finde ich etwas zusammengewürfelt. Ich würde sie eher
+SpielGrundlagen oder SpielVorbereitung oder so nennen und vielleicht die letzten 
+drei Methoden in die Klasse SpielAktion übernehmen.
+Oder die Methoden drin lassen und die Klasse SpielGrundfunktionen nennen. ???
+
+2. Es werden drei Instanzen angelegt: SpielAktion mainGame, SpielObjekt x, Auswertung rueck.
+Gerade x und rueck würde ich umbenennen, weil sie wenig aussagen.
+Z.B. SpielObjekt spielInstanz oder ggf. SpielGrundlagen spielObjekt
+oder Auswertung rueckgabe oder Auswertung antwortPC
+Ich finde das ein bisschen schwierig, weil es pro Klasse ja auch immer nur eine Instanz
+gibt und eigentlich könnte man fast die Klasse und deren einzige Instanz gleich nennen.
+
+3. Bei SpielEingabe ist eine Methode einlesen(einlesen:Scanner), da fände ich es gut,
+das nicht beides "einlesen" zu nennen, aber mir ist auch nichts anderes eingefallen.
+
+4. In SpielAusgabe gibt es noch die Variable posNumberCorrect. Die würde ich auch umbenennen.
+Ich verstehe aber nicht ganz, was die tut. Ist das ne Matrix, in der richtige Treffer mit 0
+und richtige Farben an der falschen Position mit 1 markiert sind? Passt es, wenn man die 
+"rueckgabePosFarbMatrix" oder "posFarbRichtig" oder so nennt?
+
+Viele Grüße, Antonia
