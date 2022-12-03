@@ -11,7 +11,7 @@ public class SpielAusgabe {
     }
 
     public static void ausgebenSpielfeld(SpielObjekt x, Auswertung rueck){
-        System.out.println("Ich bin die FarbenMatrix");
+        //System.out.println("Ich bin die FarbenMatrix");
         
         for (int i=0; i<x.anzahlRunden; i++){
             for (int j=0; j<x.anzahlKugeln; j++){
@@ -23,14 +23,14 @@ public class SpielAusgabe {
     }
 
 
-    public static void ausgebenRückmeldung(int[][] PosNumberCorrect, int Runde){
+    public static void ausgebenRückmeldung(int[][] posNumberCorrect, int runde){
         int i;
         System.out.print("\tTreffer: ");
-        for (i=0; i<PosNumberCorrect[Runde][0]; i++){             // X für "Position und Farbe korrekt"; O für "Farbe korrekt"; in Anleitung schreiben oder so
+        for (i=0; i<posNumberCorrect[runde][0]; i++){             // X für "Position und Farbe korrekt"; O für "Farbe korrekt"; in Anleitung schreiben oder so
             System.out.print("X");
         }
         System.out.print("\tFarbe richtig: ");
-        for (i=0; i<PosNumberCorrect[Runde][1]; i++){
+        for (i=0; i<posNumberCorrect[runde][1]; i++){
             System.out.print("X");
         }
         System.out.println();
@@ -52,13 +52,14 @@ public class SpielAusgabe {
     }
 
     public static void ausgebenSpielregeln () {
-        System.out.print("Spielregeln Mastermind \n");
+        System.out.print("Spielregeln Mastermind:\n");
         System.out.print("Ziel des Spiels: Errate die richtigen Farben und die richtige Reihenfolge der Kugeln.\n");
-        System.out.print("Wähle die Anzahl der Farben und die Anzahl der Kugeln, die du setzen möchtest. \n");
-        System.out.print("Belege die freien Plätze mit Kugeln. Dann bekommst du eine Rückmeldung.\n");
-        System.out.print("Die erste Zahl gibt dir die Anzahl an gesetzten Kugeln mit richtiger Position und Farbe an.\n");
-        System.out.print("Die zweite Zahl gibt dir die Anzahl an gesetzten Kugeln mit der richtigen Farbe, aber an falscher Position, an.\n");
-        System.out.print("Viel Spaß beim Spielen! Du hast XXX Versuche.\n");
+        System.out.print("Gib jeweils den ersten Buchstaben von vier Farben getrennt durch Leerzeichen ein.\n");
+        System.out.print("Welche Farben es gibt, erfährst du in der unten folgenden Tabelle.\n");
+        System.out.print("Die Rückmeldung an dich bedeutet: \n");
+        System.out.print("Treffer: Jedes X steht für eine Kugel in der richtigen Farbe an der richtigen Position.  \n");
+        System.out.print("Farbe richtig: Jedes X steht für eine Kugel in der richtigen Farbe an der falschen Position.\n");
+        System.out.print("Viel Spaß beim Spielen! Du hast 12 Versuche.\n");
     }
 
     public static void ausgebenFarben () {
@@ -76,7 +77,7 @@ public class SpielAusgabe {
 
     }
 
-    public static void ausgebenTrenner (int Zeile) {
-        System.out.print("\n\n"+Zeile+": ----------------------\n");
+    public static void ausgebenTrenner (int aktuellerVersuch) {
+        System.out.print("\n\nAktueller Versuch "+aktuellerVersuch+": ----------------------\n");
     }
 }
