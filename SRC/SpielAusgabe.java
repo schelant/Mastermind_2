@@ -2,35 +2,35 @@ package SRC;
 
 public class SpielAusgabe {
     // Variable für Anzahl der versuche X X X;
-    public static void ausgebenLösung(String[] x){
+    public static void ausgebenLösung(String[] spiel){
         int i = 0;
-        for (i = 0; i < x.length; i++) {
-            System.out.print(x[i]+" | ");
+        for (i = 0; i < spiel.length; i++) {
+            System.out.print(spiel[i]+" | ");
         }
         System.out.print("\n\n");
     }
 
-    public static void ausgebenSpielfeld(SpielObjekt x, Auswertung rueck){
+    public static void ausgebenSpielfeld(SpielObjekt spiel, Auswertung rueckmeldung){
         //System.out.println("Ich bin die FarbenMatrix");
         
-        for (int i=0; i<x.anzahlRunden; i++){
-            for (int j=0; j<x.anzahlKugeln; j++){
-                System.out.print(x.farbenmatrix[i][j] + " ");
+        for (int i=0; i<spiel.anzahlRunden; i++){
+            for (int j=0; j<spiel.anzahlKugeln; j++){
+                System.out.print(spiel.farbenmatrix[i][j] + " ");
             }
             System.out.print("    ");
-            ausgebenRückmeldung(rueck.positionUndFarbeRichtig, i);
+            ausgebenRückmeldung(rueckmeldung.positionUndFarbeRichtig, i);
         }
     }
 
 
-    public static void ausgebenRückmeldung(int[][] posNumberCorrect, int runde){
+    public static void ausgebenRückmeldung(int[][] anzahlRichtige, int runde){
         int i;
         System.out.print("\tTreffer: ");
-        for (i=0; i<posNumberCorrect[runde][0]; i++){             // X für "Position und Farbe korrekt"; O für "Farbe korrekt"; in Anleitung schreiben oder so
+        for (i=0; i<anzahlRichtige[runde][0]; i++){             // X für "Position und Farbe korrekt"; O für "Farbe korrekt"; in Anleitung schreiben oder so
             System.out.print("X");
         }
         System.out.print("\tFarbe richtig: ");
-        for (i=0; i<posNumberCorrect[runde][1]; i++){
+        for (i=0; i<anzahlRichtige[runde][1]; i++){
             System.out.print("X");
         }
         System.out.println();

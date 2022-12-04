@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class SpielEingabe {
     public String[] eingabeReihe;
 
-    public String[] einlesen(Scanner einlesen){
+    public String[] einlesen(Scanner eingabe){
         
         System.out.println("Gib was ein, Freund!");
 
-        String s = einlesen.nextLine();
+        String s = eingabe.nextLine();
 
         
         this.eingabeReihe = s.split(" ");

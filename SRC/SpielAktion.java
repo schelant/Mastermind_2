@@ -11,28 +11,28 @@ public class SpielAktion {
                         // werden und die Variable gleich heißt (ist zwar Polymorphie, aber trotzdem
                         // verwirrend) 
 
-    public void Runde(SpielObjekt x, Auswertung rueck){       
+    public void rundeSpielen(SpielObjekt spiel, Auswertung rueckmeldung){       
         Scanner einlesen = new Scanner(System.in);
         SpielEingabe input = new SpielEingabe();
 
         
         SpielAusgabe.ausgebenTrenner(this.aktuelleRunde);
-        SpielAusgabe.ausgebenSpielfeld(x, rueck);
-        SpielAusgabe.ausgebenLösung(x.konvertiereBuchstabeZuFarbe(x.zielArray));
+        SpielAusgabe.ausgebenSpielfeld(spiel, rueckmeldung);
+        SpielAusgabe.ausgebenLösung(spiel.konvertiereBuchstabeZuFarbe(spiel.zielArray));
         
         
         input.eingabeReihe = input.einlesen(einlesen);
 
-        SpielAusgabe.ausgebenLösung(x.konvertiereBuchstabeZuFarbe(input.eingabeReihe));
+        SpielAusgabe.ausgebenLösung(spiel.konvertiereBuchstabeZuFarbe(input.eingabeReihe));
 
 
-        rueck.positionUndFarbeRichtig = rueck.vergleichenEingabeZiel(x.zielArray, input.eingabeReihe, this.aktuelleRunde);
-        SpielAusgabe.ausgebenRückmeldung(rueck.positionUndFarbeRichtig, this.aktuelleRunde);
+        rueckmeldung.positionUndFarbeRichtig = rueckmeldung.vergleichenEingabeZiel(spiel.zielArray, input.eingabeReihe, this.aktuelleRunde);
+        SpielAusgabe.ausgebenRückmeldung(rueckmeldung.positionUndFarbeRichtig, this.aktuelleRunde);
 
-        x.hinzufügenEingabeZuMatrix(input.eingabeReihe, this.aktuelleRunde);     
+        spiel.hinzufügenEingabeZuMatrix(input.eingabeReihe, this.aktuelleRunde);     
         SpielAusgabe.reinigeEingabeaufforderung();
 
-        if (rueck.positionUndFarbeRichtig[this.aktuelleRunde][0] == x.anzahlKugeln){    
+        if (rueckmeldung.positionUndFarbeRichtig[this.aktuelleRunde][0] == spiel.anzahlKugeln){    
             this.spielGehtWeiter = false;
         }
         //einlesen.close();
