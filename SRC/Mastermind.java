@@ -23,13 +23,18 @@ public class Mastermind
         spiel.zielArray = spiel.initZielArray();
         rueckmeldung.initPositionsmatrix(spiel);
 
+
+        output.ausgebenSpielregeln();
+        System.out.println("Farben, aus denen du wählen kannst:");
+        output.ausgebenFarben();
+
         while (MainGame.spielGehtWeiter == true){
             MainGame.rundeSpielen(spiel, rueckmeldung, input, output);
             MainGame.aktuelleRunde++;
             MainGame.kontrolliereSpielende();
         }
         if (MainGame.spielGehtWeiter == false){
-            System.out.println("Leider verloren! Die richtige Lösung wäre gewesen:");
+            System.out.println("Leider verloren! Die richtige Lösung ist:");
             output.ausgebenLösung(spiel.zielArray);
         }
     }
