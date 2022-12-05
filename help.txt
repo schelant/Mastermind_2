@@ -13,3 +13,8 @@ git pull https://github.com/SiDsHubG/Mastermind.git main
 //git config --global user.name "Your Name"
 
 java swing
+
+Remote Repository mit anderem Branch laden
+
+git fetch git@github.com:SiDsHubG/Mastermind.git master:master
+git fetch git@github.com:SiDsHubG/Mastermind.git main:main
