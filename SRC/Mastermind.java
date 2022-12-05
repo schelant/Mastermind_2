@@ -14,11 +14,6 @@ public class Mastermind
 
         spiel.zielArray = spiel.initMastermind(10, 4, 12);
         rueckmeldung.initPositionsmatrix(spiel);
-        
-        SpielAusgabe.ausgebenSpielregeln(); //einmal am Anfang zeigen
-        System.out.print("Wähle aus den folgenden Farben:\n");
-        SpielAusgabe.ausgebenFarben();//einmal am Anfang zeigen
-        
 
         while (MainGame.spielGehtWeiter == true){
             MainGame.rundeSpielen(spiel, rueckmeldung);
