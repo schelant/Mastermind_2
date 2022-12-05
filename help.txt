@@ -16,5 +16,11 @@ java swing
 
 Remote Repository mit anderem Branch laden
 
-git fetch git@github.com:SiDsHubG/Mastermind.git master:master
-git fetch git@github.com:SiDsHubG/Mastermind.git main:main
+git pull git@github.com:SiDsHubG/Mastermind.git master:master
+git pull git@github.com:SiDsHubG/Mastermind.git main:main
+
+zu branch wechseln
+git checkout main
+
+branches ansehen
+git branch -l
