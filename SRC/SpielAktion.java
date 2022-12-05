@@ -10,7 +10,7 @@ public class SpielAktion {
                         // festgelegt wird. Dann ist es verwirrend, wenn hier die Runden hochgezählt
                         // werden und die Variable gleich heißt (ist zwar Polymorphie, aber trotzdem
                         // verwirrend) 
-    public void kontroliereSpielende(){
+    public void kontrolliereSpielende(){
         if (this.aktuelleRunde >= 12){
             this.spielGehtWeiter = false;
         }
