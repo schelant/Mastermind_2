@@ -10,27 +10,35 @@ public class SpielAktion {
                         // festgelegt wird. Dann ist es verwirrend, wenn hier die Runden hochgezählt
                         // werden und die Variable gleich heißt (ist zwar Polymorphie, aber trotzdem
                         // verwirrend) 
+    public void kontroliereSpielende(){
+        if (this.aktuelleRunde >= 12){
+            this.spielGehtWeiter = false;
+        }
+    }
 
     public void rundeSpielen(SpielObjekt spiel, Auswertung rueckmeldung){       
         Scanner einlesen = new Scanner(System.in);
         SpielEingabe input = new SpielEingabe();
+        SpielAusgabe output = new SpielAusgabe();
+        //PCEingabe pcinput = new PCEingabe();
 
         
-        SpielAusgabe.ausgebenTrenner(this.aktuelleRunde);
-        SpielAusgabe.ausgebenSpielfeld(spiel, rueckmeldung);
+        output.ausgebenTrenner(this.aktuelleRunde);
+        output.ausgebenSpielfeld(spiel, rueckmeldung);
         //SpielAusgabe.ausgebenLösung(spiel.konvertiereBuchstabeZuFarbe(spiel.zielArray));
         
         
         input.eingabeReihe = input.einlesen(einlesen);
+        //input.eingabeReihe = pcinput.generate();
 
-        SpielAusgabe.ausgebenLösung(spiel.konvertiereBuchstabeZuFarbe(input.eingabeReihe));
+        output.ausgebenLösung(spiel.konvertiereBuchstabeZuFarbe(input.eingabeReihe));
 
 
         rueckmeldung.positionUndFarbeRichtig = rueckmeldung.vergleichenEingabeZiel(spiel.zielArray, input.eingabeReihe, this.aktuelleRunde);
-        SpielAusgabe.ausgebenRückmeldung(rueckmeldung.positionUndFarbeRichtig, this.aktuelleRunde);
+        output.ausgebenRückmeldung(rueckmeldung.positionUndFarbeRichtig, this.aktuelleRunde);
 
         spiel.hinzufügenEingabeZuMatrix(input.eingabeReihe, this.aktuelleRunde);     
-        SpielAusgabe.reinigeEingabeaufforderung();
+        output.reinigeEingabeaufforderung();
 
         if (rueckmeldung.positionUndFarbeRichtig[this.aktuelleRunde][0] == spiel.anzahlKugeln){    
             this.spielGehtWeiter = false;

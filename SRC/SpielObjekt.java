@@ -10,14 +10,16 @@ public class SpielObjekt {
     
     Random random = new Random();
        
-
-    public String[] initMastermind(int anzahlFarben, int anzahlKugeln, int anzahlRunden)
-    {
+    public SpielObjekt(int anzahlFarben, int anzahlKugeln, int anzahlRunden){
         this.anzahlFarben = anzahlFarben;
         this.anzahlKugeln = anzahlKugeln;
         this.anzahlRunden = anzahlRunden;
-        this.farbenmatrix = new String [anzahlRunden][anzahlKugeln]; 
+    }
 
+    public String[] initZielArray()
+    {
+        
+        this.farbenmatrix = new String [anzahlRunden][anzahlKugeln]; 
         String [] zielArray = new String [anzahlKugeln];
         
         int zufall = 0; 

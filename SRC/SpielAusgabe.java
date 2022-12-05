@@ -1,8 +1,11 @@
 package SRC;
 
 public class SpielAusgabe {
+
+    private String privateString = new String("\n\nAktueller Versuch");
+    
     // Variable für Anzahl der versuche X X X;
-    public static void ausgebenLösung(String[] spiel){
+    public void ausgebenLösung(String[] spiel){
         int i = 0;
         for (i = 0; i < spiel.length; i++) {
             System.out.print(spiel[i]+" | ");
@@ -10,7 +13,7 @@ public class SpielAusgabe {
         System.out.print("\n\n");
     }
 
-    public static void ausgebenSpielfeld(SpielObjekt spiel, Auswertung rueckmeldung){
+    public void ausgebenSpielfeld(SpielObjekt spiel, Auswertung rueckmeldung){
         //System.out.println("Ich bin die FarbenMatrix");
         
         for (int i=0; i<spiel.anzahlRunden; i++){
@@ -23,7 +26,7 @@ public class SpielAusgabe {
     }
 
 
-    public static void ausgebenRückmeldung(int[][] anzahlRichtige, int runde){
+    public void ausgebenRückmeldung(int[][] anzahlRichtige, int runde){
         int i;
         System.out.print("\tTreffer: ");
         for (i=0; i<anzahlRichtige[runde][0]; i++){             // X für "Position und Farbe korrekt"; O für "Farbe korrekt"; in Anleitung schreiben oder so
@@ -36,7 +39,7 @@ public class SpielAusgabe {
         System.out.println();
     }
 
-    public static void reinigeEingabeaufforderung(){
+    public void reinigeEingabeaufforderung(){
         try{
             final String os = System.getProperty("os.name");
             
@@ -51,7 +54,7 @@ public class SpielAusgabe {
         }
     }
 
-    public static void ausgebenSpielregeln () {
+    public void ausgebenSpielregeln () {
         System.out.print("Spielregeln Mastermind:\n");
         System.out.print("Ziel des Spiels: Errate die richtigen Farben und die richtige Reihenfolge der Kugeln.\n");
         System.out.print("Gib jeweils den ersten Buchstaben von vier Farben getrennt durch Leerzeichen ein.\n");
@@ -62,7 +65,7 @@ public class SpielAusgabe {
         System.out.print("Viel Spaß beim Spielen! Du hast 12 Versuche.\n");
     }
 
-    public static void ausgebenFarben () {
+    public void ausgebenFarben () {
 
         System.out.print(" 1 r (red) \n");
         System.out.print(" 2 b (blue) \n");
@@ -77,7 +80,8 @@ public class SpielAusgabe {
 
     }
 
-    public static void ausgebenTrenner (int aktuellerVersuch) {
-        System.out.print("\n\nAktueller Versuch "+aktuellerVersuch+": ----------------------\n");
+
+    public void ausgebenTrenner (int aktuellerVersuch) {
+        System.out.print(this.privateString+aktuellerVersuch+": ----------------------\n");
     }
 }

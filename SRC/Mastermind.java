@@ -4,20 +4,25 @@ public class Mastermind
 {
     public static void main (String[] args) 
     {   
-        new Gui();
+        //new Gui();
+
         //Gui Screen = new Gui();
+        // Maingame ist ein Object von der Klasse SpielAktion
+        // Die Funktionen von Maingame sind die Methoden
+
         SpielAktion MainGame = new SpielAktion();
         MainGame.spielGehtWeiter = true;
 
-        SpielObjekt spiel = new SpielObjekt();
+        SpielObjekt spiel = new SpielObjekt(10,4,12);
         Auswertung rueckmeldung = new Auswertung();
 
-        spiel.zielArray = spiel.initMastermind(10, 4, 12);
+        spiel.zielArray = spiel.initZielArray();
         rueckmeldung.initPositionsmatrix(spiel);
 
         while (MainGame.spielGehtWeiter == true){
             MainGame.rundeSpielen(spiel, rueckmeldung);
             MainGame.aktuelleRunde++;
+            MainGame.kontroliereSpielende();
         }
     }
 }
