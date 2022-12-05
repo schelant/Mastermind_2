@@ -1,5 +1,7 @@
 package SRC;
 
+//import java.nio.file.FileAlreadyExistsException;
+
 public class Mastermind
 {
     public static void main (String[] args) 
@@ -22,7 +24,12 @@ public class Mastermind
         while (MainGame.spielGehtWeiter == true){
             MainGame.rundeSpielen(spiel, rueckmeldung);
             MainGame.aktuelleRunde++;
-            MainGame.kontroliereSpielende();
+            MainGame.kontrolliereSpielende();
+        }
+        if (MainGame.spielGehtWeiter == false){
+            System.out.print("Leider verloren! Die richtige Lösung wäre gewesen:");
+            //SpielAusgabe.ausgebenLösung(spiel.zielArray);
+            
         }
     }
 }
