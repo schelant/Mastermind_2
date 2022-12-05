@@ -18,7 +18,7 @@ public class SpielAktion {
         
         SpielAusgabe.ausgebenTrenner(this.aktuelleRunde);
         SpielAusgabe.ausgebenSpielfeld(x, rueck);
-        SpielAusgabe.ausgebenLösung(x.konvertiereBuchstabeZuFarbe(x.zielArray));
+        //SpielAusgabe.ausgebenLösung(x.konvertiereBuchstabeZuFarbe(x.zielArray));
         
         
         input.eingabeReihe = input.einlesen(einlesen);
