@@ -16,10 +16,8 @@ public class SpielAktion {
         }
     }
 
-    public void rundeSpielen(SpielObjekt spiel, Auswertung rueckmeldung){       
+    public void rundeSpielen(SpielObjekt spiel, Auswertung rueckmeldung, SpielEingabe input ,SpielAusgabe output){       
         Scanner einlesen = new Scanner(System.in);
-        SpielEingabe input = new SpielEingabe();
-        SpielAusgabe output = new SpielAusgabe();
         //PCEingabe pcinput = new PCEingabe();
 
         

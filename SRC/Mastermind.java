@@ -17,19 +17,20 @@ public class Mastermind
 
         SpielObjekt spiel = new SpielObjekt(10,4,12);
         Auswertung rueckmeldung = new Auswertung();
+        SpielEingabe input = new SpielEingabe();
+        SpielAusgabe output = new SpielAusgabe();
 
         spiel.zielArray = spiel.initZielArray();
         rueckmeldung.initPositionsmatrix(spiel);
 
         while (MainGame.spielGehtWeiter == true){
-            MainGame.rundeSpielen(spiel, rueckmeldung);
+            MainGame.rundeSpielen(spiel, rueckmeldung, input, output);
             MainGame.aktuelleRunde++;
             MainGame.kontrolliereSpielende();
         }
         if (MainGame.spielGehtWeiter == false){
-            System.out.print("Leider verloren! Die richtige Lösung wäre gewesen:");
-            //SpielAusgabe.ausgebenLösung(spiel.zielArray);
-            
+            System.out.println("Leider verloren! Die richtige Lösung wäre gewesen:");
+            output.ausgebenLösung(spiel.zielArray);
         }
     }
 }
